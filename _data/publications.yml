@@ -1,0 +1,30 @@
+- year: 2023
+  featured: true
+  title: "A Study on Survival Analysis Methods Using Neural Networks to Prevent Cancers"
+  authors: "Chulyoung B., Boseon K., Sunha J., Jonghoon L., <strong>Dung NN</strong>"
+  venue: "Cancers"
+  role: "Deep survival modelling, data cleaning, analysis, manuscript."
+
+- year: 2021
+  title: "Metabolic health and central obesity are significantly associated with an increased risk of thyroid cancer: Data from the Korean Genome and Epidemiology Study"
+  authors: "<strong>Dung NN</strong>, Jinhee K., Mikyung K."
+  venue: "Cancer Epidemiology, Biomarkers &amp; Prevention"
+  role: "Research questions, data cleaning, survival analysis, manuscript."
+
+- year: 2018
+  title: "A Systematic Review of Effort–Reward Imbalance among Health Workers"
+  authors: "Huy NV, Mai DL, Thanh NV, <strong>Dung NN</strong>, Anh NT"
+  venue: "International Journal of Health Planning and Management"
+  role: "Review screening and synthesis, manuscript."
+
+- year: 2017
+  title: "Patient satisfaction with health-care services at a national institute of ophthalmology"
+  authors: "Huy NV, <strong>Dung NN</strong>, Hanh LT, Thanh NV"
+  venue: "International Journal of Health Planning and Management"
+  role: "Data collection, logistic-regression analysis, manuscript."
+
+- year: 2016
+  title: "Cigarette Smoking among Adolescents aged 13–15 in Viet Nam: Results from GYTS 2014 Data"
+  authors: "Huong LT, …, <strong>Dung NN</strong>, et al."
+  venue: "Asian Pacific Journal of Cancer Prevention"
+  role: "Logistic-regression analysis, manuscript."

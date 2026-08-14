@@ -1,0 +1,32 @@
+---
+layout: page
+title: Publications
+subtitle: Peer-reviewed work in cancer epidemiology, survival analysis, and public health.
+permalink: /publications/
+---
+
+<ul class="pubs">
+  {% for pub in site.data.publications %}
+  <li{% if pub.featured %} class="featured"{% endif %}>
+    <span class="pub-year">{{ pub.year }}</span>
+    <div>
+      <p class="pub-title">{{ pub.title }}</p>
+      <p class="pub-venue">{{ pub.authors }} · {{ pub.venue }}</p>
+      {% if pub.role %}<p class="pub-role">{{ pub.role }}</p>{% endif %}
+    </div>
+  </li>
+  {% endfor %}
+</ul>
+
+<h2>Conference</h2>
+
+<div class="cv-entry">
+  <div class="cv-when">2018</div>
+  <div class="cv-what">
+    <h3>APHA Annual Meeting &amp; Expo</h3>
+    <p class="cv-where">American Public Health Association</p>
+    <ul>
+      <li>HPV cohort and progression of cervical intraepithelial neoplasia — survival analysis.</li>
+    </ul>
+  </div>
+</div>

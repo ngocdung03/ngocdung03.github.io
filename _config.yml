@@ -1,0 +1,62 @@
+title: "Ngoc-Dung Nguyen"
+tagline: "AI / Machine Learning Researcher"
+description: >-
+  AI/ML researcher working at the intersection of deep learning and cancer
+  science. Deep survival analysis, prospective cohort data, and biomedical AI
+  for drug discovery.
+url: "https://ngocdung03.github.io"
+baseurl: ""
+
+author:
+  name: "Ngoc-Dung Nguyen"
+  role: "AI / Machine Learning Researcher"
+  location: "Seoul, South Korea"
+  email: "ngocdungnguyen.hmu@gmail.com"
+  github: "ngocdung03"
+  linkedin: "ngoc-dung-nguyen"
+  orcid: ""
+
+markdown: kramdown
+kramdown:
+  input: GFM
+  syntax_highlighter: rouge
+highlighter: rouge
+
+sass:
+  style: compressed
+
+plugins:
+  - jekyll-feed
+  - jekyll-sitemap
+  - jekyll-seo-tag
+
+collections:
+  projects:
+    output: true
+    permalink: /projects/:name/
+
+defaults:
+  - scope:
+      path: ""
+      type: "projects"
+    values:
+      layout: "project"
+
+nav:
+  - title: Home
+    url: /
+  - title: About
+    url: /about/
+  - title: Projects
+    url: /projects/
+  - title: Publications
+    url: /publications/
+  - title: CV
+    url: /cv/
+
+exclude:
+  - Gemfile
+  - Gemfile.lock
+  - README.md
+  - vendor
+  - .devcontainer

@@ -1,0 +1,87 @@
+---
+layout: default
+---
+
+<section class="hero">
+  <h1>Ngoc-Dung Nguyen</h1>
+  <p class="role">AI / Machine Learning Researcher</p>
+  <p class="lede">
+    I build deep-learning models that turn clinical and prospective cohort data
+    into calibrated, time-to-event risk predictions. Four years of survival
+    modelling on large cancer cohorts, grounded in a biomedical and
+    cancer-science background — now aimed at biomedical AI for drug discovery.
+  </p>
+  <p class="contact-line">
+    <span>Seoul, South Korea</span>
+    <span>·</span>
+    <a href="mailto:ngocdungnguyen.hmu@gmail.com">ngocdungnguyen.hmu@gmail.com</a>
+    <span>·</span>
+    <a href="https://github.com/ngocdung03">GitHub</a>
+    <span>·</span>
+    <a href="https://www.linkedin.com/in/ngoc-dung-nguyen">LinkedIn</a>
+  </p>
+</section>
+
+<h2>Selected Work</h2>
+<ul class="entries">
+  {% assign ordered = site.projects | sort: "order" %}
+  {% for p in ordered %}
+  <li>
+    <h3 class="entry-title"><a href="{{ p.url | relative_url }}">{{ p.title }}</a></h3>
+    <p class="entry-meta">{{ p.period }}{% if p.org %} · {{ p.org }}{% endif %}</p>
+    <p class="entry-desc">{{ p.summary }}</p>
+  </li>
+  {% endfor %}
+</ul>
+
+<h2>Research Focus</h2>
+
+<div class="skills">
+  <div class="skill-group">
+    <h3>Deep Survival Analysis</h3>
+    <p>Neural networks for time-to-event prediction; discrete- and continuous-time
+    formulations benchmarked against Cox proportional hazards.</p>
+  </div>
+  <div class="skill-group">
+    <h3>Cancer Risk Prediction</h3>
+    <p>Prospective cohort modelling — thyroid, cervical, and general cancer risk
+    from metabolic, anthropometric, and lifestyle covariates.</p>
+  </div>
+  <div class="skill-group">
+    <h3>Clinical Data Pipelines</h3>
+    <p>Integrating and cleaning large biomedical datasets into reproducible
+    R/Python pipelines with pre-specified analysis plans.</p>
+  </div>
+  <div class="skill-group">
+    <h3>Biomedical AI for Discovery</h3>
+    <p>Extending sequence and representation models (Transformers, CNNs, LSTMs)
+    from clinical outcomes toward molecular and preclinical endpoints.</p>
+  </div>
+</div>
+
+<h2>Toolkit</h2>
+
+<table>
+  <tbody>
+    <tr><th>Deep learning</th><td>PyTorch, Transformers, LSTMs, CNNs, deep survival models, TensorFlow</td></tr>
+    <tr><th>ML &amp; statistics</th><td>scikit-learn, survival analysis (Cox PH), logistic regression, predictive modelling</td></tr>
+    <tr><th>Languages</th><td>Python, R, SQL, STATA, ArcGIS</td></tr>
+    <tr><th>Platforms</th><td>Git, AWS, Docker, Kubernetes, Flask, Jupyter</td></tr>
+    <tr><th>Domain</th><td>Cancer epidemiology, cohort and clinical data, medical prognosis, biostatistics</td></tr>
+  </tbody>
+</table>
+
+<h2>Recent Publications</h2>
+<ul class="pubs">
+  {% assign recent = site.data.publications | slice: 0, 3 %}
+  {% for pub in recent %}
+  <li{% if pub.featured %} class="featured"{% endif %}>
+    <span class="pub-year">{{ pub.year }}</span>
+    <div>
+      <p class="pub-title">{{ pub.title }}</p>
+      <p class="pub-venue">{{ pub.venue }}</p>
+    </div>
+  </li>
+  {% endfor %}
+</ul>
+<p><a href="{{ '/publications/' | relative_url }}">All publications →</a></p>

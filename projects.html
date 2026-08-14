@@ -1,0 +1,20 @@
+---
+layout: page
+title: Projects
+subtitle: Models and analyses, mostly at the boundary of deep learning and cancer epidemiology.
+permalink: /projects/
+---
+
+<ul class="entries">
+  {% assign ordered = site.projects | sort: "order" %}
+  {% for p in ordered %}
+  <li>
+    <h3 class="entry-title"><a href="{{ p.url | relative_url }}">{{ p.title }}</a></h3>
+    <p class="entry-meta">{{ p.period }}{% if p.org %} · {{ p.org }}{% endif %}</p>
+    <p class="entry-desc">{{ p.summary }}</p>
+    {% if p.tech %}
+    <ul class="tags">{% for t in p.tech %}<li>{{ t }}</li>{% endfor %}</ul>
+    {% endif %}
+  </li>
+  {% endfor %}
+</ul>
