@@ -9,18 +9,23 @@
   <link rel="alternate" type="application/atom+xml" href="{{ '/feed.xml' | relative_url }}">
   <script>
     // Applied before first paint so a stored choice never flashes the wrong theme.
-    // No stored choice means no attribute, and the CSS falls back to prefers-color-scheme.
+    // Read from either store: whichever survives in this browser carries the choice
+    // across page loads. No stored choice means no attribute, and the CSS falls back
+    // to prefers-color-scheme.
     (function () {
-      try {
-        var t = localStorage.getItem('theme');
-        if (t === 'dark' || t === 'light') document.documentElement.setAttribute('data-theme', t);
-      } catch (e) {}
+      var t = null;
+      try { t = localStorage.getItem('theme'); } catch (e) {}
+      if (t !== 'dark' && t !== 'light') {
+        var m = document.cookie.match(/(?:^|;\s*)theme=(dark|light)(?:;|$)/);
+        t = m ? m[1] : null;
+      }
+      if (t === 'dark' || t === 'light') document.documentElement.setAttribute('data-theme', t);
     })();
   </script>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,500;0,600;1,400&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="{{ '/assets/css/style.css' | relative_url }}">
+  <link rel="stylesheet" href="{{ '/assets/css/style.css' | relative_url }}?v={{ site.time | date: '%s' }}">
   <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🧬</text></svg>">
 </head>
 <body>
@@ -44,10 +49,18 @@
           current() === 'dark' ? 'Switch to light theme' : 'Switch to dark theme');
       }
 
+      function store(value) {
+        try { localStorage.setItem('theme', value); } catch (e) {}
+        // Cookie fallback: survives navigation even where localStorage is blocked.
+        try {
+          document.cookie = 'theme=' + value + ';path=/;max-age=31536000;samesite=lax';
+        } catch (e) {}
+      }
+
       button.addEventListener('click', function () {
         var next = current() === 'dark' ? 'light' : 'dark';
         root.setAttribute('data-theme', next);
-        try { localStorage.setItem('theme', next); } catch (e) {}
+        store(next);
         label();
       });
 
