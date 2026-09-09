@@ -5,7 +5,7 @@ subtitle: Deep learning, survival analysis, and a biomedical foundation.
 permalink: /about/
 ---
 
-I am an AI/ML researcher based in Seoul, working at [MoAdata](https://www.moadata.com/)
+I am an AI/ML researcher based in Seongnam, South Korea, working at [MoAdata](https://www.moadata.com/)
 on deep-learning models that predict cancer risk from large-scale prospective
 cohort data — end to end, from the data pipeline through training and evaluation.
 
