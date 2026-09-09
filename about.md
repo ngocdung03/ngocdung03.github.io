@@ -27,12 +27,13 @@ modern architectures.
 
 ## What I am working toward
 
-I want to apply biomedical AI to **AI-driven drug discovery** — translating
-molecular and clinical data into predictive, decision-ready models. The
-time-to-event machinery I use for cancer risk transfers directly to
-preclinical and clinical endpoints, and the representation-learning tooling
-(Transformers, CNNs, sequence models) is the same tooling that molecular
-property prediction runs on.
+I want to apply biomedical AI to **clinical intelligence** — medical foundation
+models and retrieval-augmented language systems answering real clinical
+questions. The representation-learning tooling is shared, but the part that
+transfers least often and matters most is the evaluation discipline: survival
+modelling forces you to be precise about calibration, about censoring, and about
+what a metric is actually measuring. Generative clinical systems are at present
+short of exactly that, and it is the gap I want to work in.
 
 ## Outside the models
 
