@@ -13,9 +13,10 @@ permalink: /cv/
     <h3>AI Researcher</h3>
     <p class="cv-where">MoAdata</p>
     <ul>
-      <li>Develop deep-learning models predicting cancer risk from large-scale prospective cohort data — data pipeline through training and evaluation.</li>
+      <li>Develop deep-learning models predicting cancer risk from large-scale prospective cohort and clinical imaging data — data pipeline through training, evaluation and deployment.</li>
+      <li><strong>CHORALE — liver fibrosis staging under vendor shift</strong> (MICCAI 2026 CARE-Liver challenge). Built the full 3D multi-parametric MRI pipeline: nnU-Net segmentation, ShaSpec shared-specific fusion for missing modalities, radiomics-GBM ensemble, ordinal staging heads, Optuna tuning. Held-out unseen-vendor AUC 0.8334 for cirrhosis detection; liver segmentation Dice 0.9332 in-domain / 0.9409 unseen vendor, scored by the organisers on splits I never held labels for. Shipped as GPU Docker containers to the official leaderboard.</li>
+      <li><strong>CanAttend</strong> — transformer/attention multi-task survival model for 10 cancer types on KCPS-II (development risk) and SEER (post-diagnosis survival); 5/10/15-year horizons, IPCW C-index; best-in-panel discrimination for lung, prostate, liver and kidney cancer. Deployed end-to-end as an interactive clinical decision-support application.</li>
       <li>Built and open-sourced <a href="https://github.com/ngocdung03/nDeep">nDeep</a>, a deep survival-analysis model for time-to-event risk prediction.</li>
-      <li>Collaborate with AI engineers on deployment and productionisation of predictive models.</li>
       <li>Continuous upskilling in modern deep learning (Transformers, CNNs, LSTMs) via the AI VIETNAM AIO2025 program.</li>
     </ul>
   </div>
@@ -59,6 +60,31 @@ permalink: /cv/
 <h2>Selected Projects</h2>
 
 <div class="cv-entry">
+  <div class="cv-when">2026</div>
+  <div class="cv-what">
+    <h3>CHORALE — Cross-Vendor Liver Fibrosis Staging</h3>
+    <p class="cv-where">MICCAI 2026 CARE-Liver challenge</p>
+    <ul>
+      <li>3D multi-parametric MRI (T1, T2, DWI, GED1–4) fibrosis staging and liver segmentation with missing modalities: nnU-Net v2, ShaSpec fusion, PEFT-adapted SAM-Med3D, radiomics-GBM ensemble, TotalSegmentator ROI.</li>
+      <li>Leave-one-vendor-out generalization study, including documented negative results for domain-adversarial training, style alignment and mutual learning.</li>
+      <li>Dockerized submission; 460 training / 280 test cases.</li>
+    </ul>
+  </div>
+</div>
+
+<div class="cv-entry">
+  <div class="cv-when">2024 – 2026</div>
+  <div class="cv-what">
+    <h3>CanAttend — Transformer Multi-Cancer Risk &amp; Survival CDSS</h3>
+    <ul>
+      <li>Attention-based multi-task survival model on KCPS-II and SEER; baselines DeepSurv, DeepHit and Random Survival Forest; IPCW C-index evaluation with competing events.</li>
+      <li>Attention analysis surfaced biomarker interactions (creatinine clearance rate, lipid profile).</li>
+      <li><a href="https://canattend.streamlit.app">Live application</a> · <a href="https://github.com/ngocdung03/CanAttend">Repository</a></li>
+    </ul>
+  </div>
+</div>
+
+<div class="cv-entry">
   <div class="cv-when">2025</div>
   <div class="cv-what">
     <h3>RAG Chatbot — Retrieval-Augmented Document QA</h3>
@@ -83,6 +109,15 @@ permalink: /cv/
     </ul>
   </div>
 </div>
+
+<h2>Manuscripts in Preparation</h2>
+
+<ul>
+  <li>Nguyen ND, et al. "CHORALE: Cross-Contrast Harmonization of Representations, Aggregated for Liver Evaluation in Cross-Vendor Fibrosis Staging." <em>In preparation, 2026.</em> <small>Role: method design, all experiments, evaluation protocol, manuscript.</small></li>
+  <li>Nguyen ND, Lee J-H, Bae C-Y. "CanAttend: A Transformer-based Clinical Decision Support System for Multi-Cancer Risk Prediction and Survival Analysis using Attention Mechanisms." <em>In preparation, 2026.</em> <small>Role: model design, training, evaluation, web application, manuscript.</small></li>
+</ul>
+
+<p><a href="{{ '/publications/' | relative_url }}">Peer-reviewed publications →</a></p>
 
 <h2>Education</h2>
 
@@ -112,11 +147,15 @@ permalink: /cv/
 <div class="skills">
   <div class="skill-group">
     <h3>Deep Learning</h3>
-    <p>PyTorch, Transformers, LSTMs, CNNs, deep survival analysis</p>
+    <p>PyTorch, Transformers, CNNs/LSTMs, nnU-Net, SAM-Med3D, deep survival analysis</p>
+  </div>
+  <div class="skill-group">
+    <h3>Medical Imaging</h3>
+    <p>Multi-parametric MRI, 3D segmentation, radiomics, domain generalization and OOD evaluation</p>
   </div>
   <div class="skill-group">
     <h3>ML &amp; Statistics</h3>
-    <p>scikit-learn, survival analysis (Cox PH), logistic regression, predictive modelling, TensorFlow</p>
+    <p>scikit-learn, survival analysis (Cox PH), IPCW C-index, model calibration, ensembling, Optuna, TensorFlow</p>
   </div>
   <div class="skill-group">
     <h3>Programming</h3>
@@ -124,7 +163,7 @@ permalink: /cv/
   </div>
   <div class="skill-group">
     <h3>Tools &amp; Platforms</h3>
-    <p>Git, AWS, Docker, Kubernetes, Jupyter</p>
+    <p>Git, Docker, AWS, Kubernetes, Streamlit, Jupyter, LaTeX</p>
   </div>
   <div class="skill-group">
     <h3>LLM &amp; Retrieval</h3>
@@ -132,7 +171,7 @@ permalink: /cv/
   </div>
   <div class="skill-group">
     <h3>Domain</h3>
-    <p>Cancer epidemiology, cohort and clinical data, medical prognosis, biostatistics</p>
+    <p>Cancer epidemiology, liver disease imaging, cohort and clinical data, medical prognosis, biostatistics, clinical NLP</p>
   </div>
 </div>
 
